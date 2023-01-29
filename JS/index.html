@@ -1,0 +1,62 @@
+<!-- HTML 조작과 변경 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h2 id = "hello">안녕하세요</h2>
+    <h2 id = "hi">올때메로나</h2>
+    <!-- UI 만드는 법
+    1. 미리 디자인해놓고 숨김
+    2. 버튼 누르거나하면 보여줌 -->
+    <div class="alert-box" id="alert">
+        <p id="title">Alert 박스</p>
+        <button id="close"> X </button>
+    </div>
+    <!-- 버튼 클릭하면 자바스크립트 실행 -->
+    <button onclick="openAlert('id 입력')">버튼1</button> 
+    <button onclick="openAlert('password 입력')">버튼2</button> 
+    
+    <script>
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display = 'none';
+        });
+
+        // 웹문서 ~의 HTML 요소 가져와 id에 의해서(id: hello) 내부글자
+        // document.getElementById('???').??? = "???";
+        document.getElementById('hello').innerHTML = '안녕';
+        document.getElementById('hi').innerHTML = '올때바밤바';
+        document.getElementById('hi').style.fontSize = '30px';
+
+        // function: 긴 코드 깔끔하게 한 단어로 축약 가능
+        // function축약된이름(){축약할 긴 코드}
+        function 알림창열기(구멍) {
+            document.getElementById('alert').style.display = 구멍;
+        }
+        
+        // function 알림창닫기() {
+        //     document.getElementById('alert').style.display='none';
+        // }
+
+        function openAlert(parameter) {
+            // document.getElementsByClassName('alert-box')[0]
+            document.getElementById('title').innerHTML = parameter;
+            document.getElementById('alert').style.display = 'block';
+        }
+
+        // function openAlert2() {
+        //     // document.getElementsByClassName('alert-box')[0]
+        //     document.getElementById('title').innerHTML = 'password 입력하세요.';
+        //     document.getElementById('alert').style.display = 'block';
+        // }
+
+
+    </script>
+
+</body>
+</html>
